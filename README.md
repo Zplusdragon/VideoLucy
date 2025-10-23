@@ -45,3 +45,11 @@ python demo.py
 
 Note: You can freely modify the `api_model` and `thinking` parameters in the code to specify different LLMs and decide whether to enable reasoning mode. Generally, reasoning mode can provide more accurate responses but may introduce additional inference time. Additionally, you can freely adjust the frame rate and frame count settings in the code to adapt to videos of different durations.
 
+## EgoMem
+
+The video resources for our EgoMem are sourced from EgoLife. Please first download the original video resources from [Huggingface](https://huggingface.co/datasets/lmms-lab/EgoLife).
+Waiting to update...
+
+
+
+
