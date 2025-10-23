@@ -44,7 +44,9 @@ You need to fill in the `vlm_model_path` and `api_key` in `demo.py`, then run th
 python demo.py
 ```
 
-The coarse memory for this video has been provided in `demo_cache/coarse_memory/demo_cache_c5f204b254f3fe1aad603c79779d2ae1.json` to facilitate rapid inference. Of course, you can also delete it to perform the inference from scratch.
+The coarse memory for this video has been provided in `demo_cache/coarse_memory/demo_cache_c5f204b254f3fe1aad603c79779d2ae1.json` to facilitate rapid inference. You can also delete it to perform the inference from scratch.
+
+Of course, **you can also try using other video links and questions as you want!**
 
 Note: You can freely modify the `api_model` and `thinking` parameters in the code to specify different LLMs and decide whether to enable reasoning mode. Generally, reasoning mode can provide more accurate responses but may introduce additional inference time. Additionally, you can freely adjust the frame rate and frame count settings in the code to adapt to videos of different durations.
 
