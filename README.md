@@ -8,7 +8,8 @@ More details can be found at our paper [VideoLucy: Deep Memory Backtracking for 
 ## News
 * 🔥[2025.10.23] The VideoLucy Demo and EgoMem Benchmark are released. Welcome to use!
 * 👍[2025.10.14] Our paper is realsed at [Arxiv](https://arxiv.org/abs/2510.12422).
-
+* 👍[2025.9.18] Our paper is accepted at NeurIPS2025.
+  
 ## Demo
 By default, our VideoLucy employs `Qwen2.5-VL-7B` as the MLLM and `DeepSeek-R1` as the LLM. The former is deployed locally, while the latter is accessed via an API.
 
@@ -47,9 +48,59 @@ Note: You can freely modify the `api_model` and `thinking` parameters in the cod
 
 ## EgoMem
 
-The video resources for our EgoMem are sourced from EgoLife. Please first download the original video resources from [Huggingface](https://huggingface.co/datasets/lmms-lab/EgoLife).
-Waiting to update...
+The video resources for our EgoMem are sourced from EgoLife. Please first download the original video resources from [EgoLife Huggingface](https://huggingface.co/datasets/lmms-lab/EgoLife).
 
+The Q&A pair data in EgoMem can be downloaded from the [EgoMem Huggingface](https://huggingface.co/datasets/jlongzuo/EgoMem) repository.
 
+The dataset has the following format:
 
+```
+|-- EgoMem/
+|   |-- annos/
+|   |   |-- detail/
+|   |      |-- A1_JAKE_DAY1_Detail_QA.json
+|   |      |-- ...
+|   |      |-- A6_SHURE_DAY7_Detail_QA.json
+|   |   |-- event/
+|   |-- videos/
+|   |   |-- A1_JAKE_DAY1.mp4
+|   |   |-- A1_JAKE_DAY2.mp4
+|   |   |-- ...
+|   |   |-- A6_SHURE_DAY7.mp4
+|   |-- EgoMem.json
+```
 
+After splicing the downloaded EgoLife video resources by date, place them into the `videos` folder. The `annos` folder contains detailed data annotations, and `EgoMem.json` is the Q&A pairs used for evaluation. The Q&A pair has the following format:
+
+```
+{
+    "videoID": "A1_JAKE_DAY1",
+    "question_id": "0",
+    "type": "Detail",
+    "question": "Who cleaned the whiteboard shortly after Jake and others collaborated to assemble it in the living room on the first floor?",
+    "options": [
+            "A. A girl in a blue-green long dress.",
+            "B. Jake himself.",
+            "C. A boy in an orange T-shirt and light-colored long pants.",
+            "D. A girl in a light green top and a blue baseball cap."
+        ],
+    "answer": "B"
+}
+```
+
+Note: Since the EgoLife Huggingface provides fragmented video clips that are not spliced into full-day recordings, **I will gradually upload the spliced videos to the EgoMem repository over the next few days** for your convenience. Stay tuned!
+
+## Acknowledgements
+We thank these great works and open-source repositories: [Qwen](https://github.com/QwenLM/Qwen3-VL), [DeepSeek](https://github.com/deepseek-ai), [EgoLife](https://github.com/EvolvingLMMs-Lab/EgoLife), [LVBench](https://github.com/zai-org/LVBench), [Video-MME](https://github.com/MME-Benchmarks/Video-MME) and [MLVU](https://github.com/JUNJIE99/MLVU).
+
+## Reference
+If you use this work in your research, please cite it by the following BibTeX entry:
+```
+@inproceedings{
+    zuo2025videolucy,
+    title={VideoLucy: Deep Memory Backtracking for Long Video Understanding},
+    author={Jialong Zuo, Yongtai Deng, Lingdong Kong, Jingkang Yang, Rui Jin, Yiwei Zhang, Nong Sang, Liang Pan, Ziwei Liu, Changxin Gao},
+    booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
+    year={2025}
+}
+```
