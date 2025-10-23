@@ -17,7 +17,7 @@ For the environment configuration of the former, please refer to the [official Q
 
 For LLM API calls, this repository uses the API provided by Volcano Engine by default. Please refer to its [official website](https://console.volcengine.com/ark/) to configure the API and obtain your API key. You can also modify our code to use other APIs for LLM calls.
 
-Our demo enables downloading videos from the Bilibili platform to local storage and conducting open-ended Q&A dialogues about the downloaded content. To download videos, you need to install the following libraries.
+Our demo enables downloading videos from the Bilibili platform to local storage and conducting open-ended Q&A dialogues about the downloaded content. To download videos, you need to install the following library.
 
 ```
 pip install you-get
